@@ -13,7 +13,7 @@
         justify-content: center;
         align-items: center;
         font-family: Arial, sans-serif;
-        background-color: orange;
+        background-color: rgb(250, 238, 3);
       }
 
       .container {
@@ -38,17 +38,19 @@
         padding: 10px 20px;
         margin-top: 10px;
         border: none;
-        background-color: #28a745;
+        background-color: rgb(255, 102, 0);
         color: white;
         border-radius: 4px;
         cursor: pointer;
         justify-content: center;
       }
+
       button:hover {
         background-color: #218838;
       }
+
       .whtbutton {
-        background-color: hsl(133, 65%, 33%);
+        background-color: rgb(255, 102, 0);
         border: none;
         color: white;
         padding: 15px 32px;
@@ -60,6 +62,15 @@
         cursor: pointer;
         border-radius: 5px;
       }
+
+      .whtbutton:hover {
+        background-color: #218838;
+      }
+
+      #tohide{
+        color: black;
+        font-style: italic;
+      }
     </style>
     <script>
       // Function to save input data to local storage
@@ -68,13 +79,17 @@
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
 
+        if (name && email) {
+          document.getElementById("tohide").style.display = "none";
+        }
+
         // Store the values in local storage
         localStorage.setItem("name", name);
         localStorage.setItem("email", email);
 
         // Display a message to the user
         document.getElementById("message").innerText =
-          "Data saved successfully!";
+          "thanks for filling da mapla , reload to see ur sh*t!";
       }
 
       // Function to load data from local storage and display it
@@ -91,6 +106,7 @@
       window.onload = loadData;
     </script>
   </head>
+
   <body>
     <div class="container">
       <h1>Summa Paera(name) kodu mapla</h1>
@@ -106,12 +122,18 @@
       </form>
 
       <p id="message"></p>
+      <p id="tohide">click save to save</p>
 
       <h2>Stored Data:</h2>
       <p id="savedName"></p>
       <p id="savedEmail"></p>
 
-    <a href="https://chat.whatsapp.com/EUjcmHKGA0e2MK205wEcvq" target="_blank" class="whtbutton">MENS group join karo yar</a>
+      <a
+        href="https://chat.whatsapp.com/EUjcmHKGA0e2MK205wEcvq"
+        target="_blank"
+        class="whtbutton"
+        >MENS group join karo yar</a
+      >
     </div>
-</body>
+  </body>
 </html>
